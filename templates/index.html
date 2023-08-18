@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Category Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Movie Category Recommender</h1>
+    <form method="POST" action="/">
+        <label for="input_text">Enter a category:</label>
+        <input type="text" id="input_text" name="input_text" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+    <h2>Recommended Categories:</h2>
+    <ul>
+        {% for category in recommended_categories %}
+            <li>{{ category }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
